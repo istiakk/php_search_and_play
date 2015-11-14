@@ -62,7 +62,7 @@ class ContentController extends Controller {
         array_walk_recursive($all_data, function (&$item) {
             $item = strtolower($item);
         });
-
+        //echo "<pre>";print_r($all_data);echo "</pre>";die;
         $groupBy = array();
         $labels = array();
 
@@ -120,6 +120,7 @@ class ContentController extends Controller {
                         $val['product_name'] = $ele['product_name'];
                         $val['sale_price'] = $ele['sale_price'];
                         $val['price'] = $ele['price'];
+                        $val['stock'] = $ele['stock'];
                         $val['image_url'] = $ele['image_url'];
                         $products [] = $val;
                     }
@@ -130,14 +131,17 @@ class ContentController extends Controller {
                 $search = $this->my_array_search($all_data, $contentSearch);
 
                 $products = array();
+                $i = 0;
+                $key_array = array();
+
                 if (!empty($search)) {
+                    // loop for sorting the grouped values
                     foreach ($search as $val) {
-                        $val = array();
-                        $val['product_name'] = $ele['product_name'];
-                        $val['sale_price'] = $ele['sale_price'];
-                        $val['price'] = $ele['price'];
-                        $val['image_url'] = $ele['image_url'];
-                        $products [] = $val;
+                        if (!in_array($val, $key_array)) {
+                            $key_array[$i] = $val;
+                            $products[$i] = $val;
+                        }
+                        $i++;
                     }
                 } elseif (empty($search)) {
 
@@ -154,42 +158,29 @@ class ContentController extends Controller {
 
                     $searchAgain = $this->my_array_search($all_data, $contentStr);
 
+                    $products = array();
+                    $i = 0;
+                    $key_array = array();
+
                     if (!empty($searchAgain)) {
+                        // loop for sorting the grouped values
                         foreach ($searchAgain as $val) {
-                            $val = array();
-                            $val['product_name'] = $ele['product_name'];
-                            $val['sale_price'] = $ele['sale_price'];
-                            $val['price'] = $ele['price'];
-                            $val['image_url'] = $ele['image_url'];
-                            $products [] = $val;
+                            if (!in_array($val, $key_array)) {
+                                $key_array[$i] = $val;
+                                $products[$i] = $val;
+                            }
+                            $i++;
                         }
                     }
                     // Step : 7 --> If Nothing have been found than the return message
-                    else {
-                        
-                    }
+                } else {
+                    
                 }
             }
         }
-//                $feed = '/Users/istiak/Documents/OneDrive/GIT/php_search_copy/src/AdminBundle/feed.csv';
-//        
-//                $csv = array_map('str_getcsv', file($feed));
-//        //$file = file_get_contents($feed);
-//        $all_data = array();
-//        $i = 0;
-//        $key_array = array();
-//
-//        // loop for sorting the grouped values
-//        foreach ($csv as $val) {
-//            if (!in_array($val, $key_array)) {
-//                $key_array[$i] = $val;
-//                $all_data[$i] = $val;
-//            }
-//            $i++;
-//        }
-        //echo "<pre>";print_r($all_data);echo "</pre>";die;
+
 //        $labelsUnq = array();
-//        $labelsUnq[]= array_values($all_data[0]);
+        $labelsUnq[] = array_values($all_data[0]);
         //echo "<pre>";print_r($labelsUnq);echo "</pre>";die;
 
         $time = (" !!! Took: " . round((microtime(true) - $tic)) . "s");
@@ -199,15 +190,21 @@ class ContentController extends Controller {
                     'pageTitle' => 'Istiak Contents',
                     'menu' => $this->menu,
                     'products' => $products,
+                    'labelsUnq' => $labelsUnq,
                         )
         );
     }
 
     function my_array_search($array, $string) {
-        $pattern = preg_replace('/\s+/', ' ', preg_quote($string));
-        return array_filter($array, function ($value) use($pattern) {
-            return preg_match('/' . $pattern . '/', $value) == 1;
-        });
+        $ret = false;
+        $pattern = preg_replace('/\s+/', ' ', preg_quote($string, '/'));
+        foreach ($array AS $k => $v) {
+            $res = preg_grep('/' . $pattern . '/', $v);
+            if (!empty($res))
+                $ret[$k] = $v;
+        }
+
+        return $ret;
     }
 
 }

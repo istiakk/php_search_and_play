@@ -40,29 +40,38 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
                     <table class="table table-striped table-bordered" id="istiak-data-table" style="text-align:center">
                         
                         <thead>
-{#                        {% for array in labelsUnq %}
-                                {% for value in array %}#}
-                        <th>                            
-                            Item
-                        </th>
-                        <th>                            
-                            Price
-                        </th>
-                        <th>                            
-                            Url
-                        </th>
-{#                        {% endfor %}
-                        {% endfor %}#}
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Country</th>
+                        <th>Sale Price</th>
+                        <th>Price</th>
+                        <th>Currency</th>
+                        <th>VAT</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                        <th>Stock</th>
+
                         </thead>
                         <tbody>
                             
                                 {% for content in products %}
                                      {#{% for data in content %}#}
                                     <tr class="">
-                                     
-                                    <td>{%if content.product_name is defined %}{{ content.product_name}}{%endif%}</td>
-                                    <td>{%if content.sale_price is defined %}{{ content.sale_price}} {%else%} {{content.price}} {%endif%}</td>  
-                                    <td>{%if content.image_url is defined%}<a href="{{ content.image_url}}">{{ content.image_url}}</a>{%endif%}</td>  
+                                    <td>{% if content.product_name is defined %}{{ content.product_name}}{%endif%}</td>
+                                    <td>{% if content.category is defined %}{{ content.category}}{%endif%}</td>
+                                    <td>{% if content.country is defined %}{{ content.country}}{%endif%}</td>                         
+                                    <td>{% if content.sale_price is defined %}{{ content.sale_price }} {%endif%}</td>
+                                    <td>{% if content.price is defined %}{{ content.price }}{%endif%}</td>
+                                  <td>{% if content.currency is defined %}{{ content.currency}}{%endif%}</td>
+                                  <td>{% if content.vat is defined %}{{ content.vat}}{%endif%}</td>
+                                  
+                                  <td>{% if content.description is defined %}{{ content.description}}{%endif%}</td>
+                                    <td>{% if content.image_url is defined%}<a href="{{ content.image_url}}">{{ content.image_url}}</a>{%endif%}</td>
+{#                                    <td>{% if content.sku is defined %}{{ content.sku}}{%endif%}</td>#}
+                                    <td>{%if content.stock is defined %}{{ content.stock}} {%endif%}</td>
+{#                                    <td>{%if content.variation name is defined %}{{ content.variation name}}{%endif%}</td>#}
+{#                                    <td>{%if content.propertyname is defined %}{{ content.propertyname}}{%endif%}</td>#}
+{#                                    <td>{%if content.propertyvalue is defined %}{{ content.propertyvalue}}{%endif%}</td>#}
                                   {# {% endfor %}#}
                                    </tr>
                             {% endfor %}
