@@ -32,6 +32,10 @@ Search by "Group"
 Search by "Product Name"
 Search "negetive word" example "iphone -5" wher you will get all the result for "iphone 4"
 
+== Output ==
+
+Search result output is saved in the web directory as a csv file
+
 == Version ==
 
 Current Version 1.0 -- 14/09/2015
