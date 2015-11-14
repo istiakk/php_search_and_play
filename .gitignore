@@ -37,4 +37,4 @@
 /composer.phar
 
 # csv file
-.csv
+*.csv
