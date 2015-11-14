@@ -118,9 +118,8 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
                         $("#txtData").html($('#contentSearch').val());
                         $("#sucumsg").show();
                         $("#istiak-data-table").show();
-        {#when the result is null display this#}
-                            if (!x) {
-                                $("#loader").show();
+                        {#when the result is null display this#}
+                            if (x<2) {
                                 $('#inputData').html($('#contentSearch').val());
                                 $("#alertmsg").show();
                                 $("#sucumsg").hide();

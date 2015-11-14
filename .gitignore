@@ -42,3 +42,22 @@
 
 # csv file
 *.csv
+
+# Composer
+composer.phar
+bin/phpcbf
+bin/phpcs
+
+# Vagrant
+.vagrant*
+nbproject/*
+
+# Local environment variables
+build/.env
+
+# Mac files
+.DS_Store
+
+# IDE
+.idea
+*.swp
