@@ -115,16 +115,20 @@ class ContentController extends Controller {
                         })) {
                     $elements = $groupBy[($contentSearch)];
 
-                    foreach ($elements as $ele) {
-                        $val = array();
-                        $val['product_name'] = $ele['product_name'];
-                        $val['sale_price'] = $ele['sale_price'];
-                        $val['price'] = $ele['price'];
-                        $val['stock'] = $ele['stock'];
-                        $val['image_url'] = $ele['image_url'];
-                        $products [] = $val;
+                $products = array();
+                $i = 0;
+                $key_array = array();
+
+                if (!empty($elements)) {
+                    // loop for sorting the grouped values
+                    foreach ($elements as $val) {
+                        if (!in_array($val, $key_array)) {
+                            $key_array[$i] = $val;
+                            $products[$i] = $val;
+                        }
+                        $i++;
                     }
-                }
+                        }}
             } else {
                 // Step : 5 --> If the request does not belongs to any Category 
                 // it will try to search from all the documents
