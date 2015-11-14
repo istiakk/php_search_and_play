@@ -116,10 +116,11 @@ class ContentController extends Controller {
                     $elements = $groupBy[($contentSearch)];
 
                     foreach ($elements as $ele) {
+                        $val = array();
                         $val['product_name'] = $ele['product_name'];
                         $val['sale_price'] = $ele['sale_price'];
                         $val['price'] = $ele['price'];
-                        $val['mage_url'] = $ele['mage_url'];
+                        $val['image_url'] = $ele['image_url'];
                         $products [] = $val;
                     }
                 }
@@ -135,7 +136,7 @@ class ContentController extends Controller {
                         $val['product_name'] = $ele['product_name'];
                         $val['sale_price'] = $ele['sale_price'];
                         $val['price'] = $ele['price'];
-                        $val['mage_url'] = $ele['mage_url'];
+                        $val['image_url'] = $ele['image_url'];
                         $products [] = $val;
                     }
                 } elseif (empty($search)) {
@@ -159,7 +160,7 @@ class ContentController extends Controller {
                             $val['product_name'] = $ele['product_name'];
                             $val['sale_price'] = $ele['sale_price'];
                             $val['price'] = $ele['price'];
-                            $val['mage_url'] = $ele['mage_url'];
+                            $val['image_url'] = $ele['image_url'];
                             $products [] = $val;
                         }
                     }
