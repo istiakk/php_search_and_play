@@ -36,5 +36,9 @@
 # Composer PHAR
 /composer.phar
 
+
+# Entities Extra file
+*.php~
+
 # csv file
 *.csv
