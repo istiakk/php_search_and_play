@@ -1,7 +1,7 @@
-Istiak PHP_Search
+Istiak PHP_Search_and_play
 ========
 
-=== Istiak PHP_Search ===
+=== Istiak PHP_Search_and_play ===
 <<<<<<< HEAD
 Contributors: Istiak Mah
 =======
