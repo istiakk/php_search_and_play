@@ -64,7 +64,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
                                     <td>{% if content.currency is defined %}{{ content.currency}}{%endif%}</td>
                                     <td>{% if content.vat is defined %}{{ content.vat}}{%endif%}</td>
                                     <td>{% if content.description is defined %}{{ content.description}}{%endif%}</td>
-                                            <td>{% if content.image_url is defined %}<a href="{{ content.image_url }}"><img height="120px" width="120px" src="{{ content.image_url }}"></a> {% else %}<a href="https://dribbble.s3.amazonaws.com/users/13774/screenshots/621770/_134.jpg"><img src="https://dribbble.s3.amazonaws.com/users/13774/screenshots/621770/_134.jpg"></a> </td>{% endif %}
+                                    <td>{% if content.image_url is defined %}<a href="{{ content.image_url }}"><img height="120px" width="120px" src="{{ content.image_url }}"></a> {% else %}<a href="https://dribbble.s3.amazonaws.com/users/13774/screenshots/621770/_134.jpg"><img src="https://dribbble.s3.amazonaws.com/users/13774/screenshots/621770/_134.jpg"></a> </td>{% endif %}
                                     <td>{%if content.stock is defined %}{{ content.stock}} {%endif%}</td>       
                                 </tr>
                             {% endfor %}
@@ -118,8 +118,8 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
                         $("#txtData").html($('#contentSearch').val());
                         $("#sucumsg").show();
                         $("#istiak-data-table").show();
-                        {#when the result is null display this#}
-                            if (x<2) {
+        {#when the result is null display this#}
+                            if (x < 2) {
                                 $('#inputData').html($('#contentSearch').val());
                                 $("#alertmsg").show();
                                 $("#sucumsg").hide();
