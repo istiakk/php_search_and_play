@@ -1,0 +1,15 @@
+Category ID,Category,Country,Sale price,Price,Currency,VAT,Product name,Description,product-image-1-url,SKU,Stock,Variation name,PropertyName,PropertyValue
+11,Phone cases,Sweden,"90,99",120,SEK,19,"""iPhone 6 Plus"" case transparent","Transparent case for iPhone 6 Plus
+
+See through mode available.",https://cdn.fyndiq.se/product/61/81/1a/0e3dfa796d6074368b4e342aa0f856c26a/original.png,HIPHONE6PTR,100,Transparent,,
+13,Shoes,Sweden,"180,99",200,SEK,19,Blue platform shoes,New in box,https://cdn.fyndiq.se/product/60/48/64/2fa6f0e92636edd142b1477ea7ec17df31/original.png,SCHUHE39,10,Size 39,Color,Blue
+13,Shoes,Sweden,"180,99",200,SEK,19,Blue platform shoes,New in box,https://cdn.fyndiq.se/product/60/48/64/2fa6f0e92636edd142b1477ea7ec17df31/original.png,SCHUHE40,12,Size 40,Color,Blue
+13,Shoes,Sweden,"180,99",200,SEK,19,Blue platform shoes,New in box,https://cdn.fyndiq.se/product/60/48/64/2fa6f0e92636edd142b1477ea7ec17df31/original.png,SCHUHE42,-20,Size 42,Color,Black
+11,Phone cases,Sweden,"120,99",120,SEK,19,"""iPhone 6S Plus"" case transparent",Transparent case for iPhone 6S Plus,https://cdn.fyndiq.se/product/61/81/1a/0e3dfa796d6074368b4e342aa0f856c26a/original.png,HIPHONE6STR,70,Transparent,,
+11,Phone cases,Sweden,"70,99",120,SEK,19,"""iPhone 6"" case transparent",Transparent case for iPhone 6,https://cdn.fyndiq.se/product/61/81/1a/0e3dfa796d6074368b4e342aa0f856c26a/original.png,HIPHONE6TR,90,Transparent,,
+13,Shoes,Sweden,2000,2200,SEK,19,Red high heel shoes,New in box,https://cdn.fyndiq.se/product/60/48/64/2fa6f0e92636edd142b1477ea7ec17df31/original.png,SCHUHE50,14,Size 39,Color,Red
+13,Shoes,Sweden,2000,2200,SEK,19,Red high heel shoes,New in box,https://cdn.fyndiq.se/product/60/48/64/2fa6f0e92636edd142b1477ea7ec17df31/original.png,SCHUHE51,11,Size 40,Color,Red
+13,Shoes,Sweden,"1800,99",2200,SEK,19,Red high heel shoes,New in box,https://cdn.fyndiq.se/product/60/48/64/2fa6f0e92636edd142b1477ea7ec17df31/original.png,SCHUHE52,33,Size 42,Color,Red
+14,Gloves,Sweden,160,160,SEK,19,Trophy Leather Touchglove,"<p>Trophy Leather Touchglove - Skinnhandske i äkta läder<br>Exklusiv skinnhandske i äkta läder. Fungerar till pekskärmen på din surfplatta eller mobilskärm vilket innebär att du exempelvis kan använda din smartphone ute i kylan utan att behöva frysa om dina fingrar.</p>
+<br/>
+<p>- Exklusiv skinnhandske<br>- Fungerar på pekskärmar<br>- Äkta läder<br>- Storlek: Medium</p>",https://cdn.fyndiq.se/product/07/0c/04/e764017e0e13a41cb499b6e8acb9684788/original.png,GLOVES007,22,,,

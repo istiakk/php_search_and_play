@@ -29,7 +29,7 @@ class ContentController extends Controller {
         $request = $this->getRequest();
 
 
-        if (($handle = fopen("/Users/istiak/Documents/OneDrive/GIT/php_search_copy/src/AdminBundle/feed.csv", "r")) !== FALSE) {
+        if (($handle = fopen("feed.csv", "r")) !== FALSE) {
             $all_data = array();
             $products = array();
 
@@ -180,12 +180,15 @@ class ContentController extends Controller {
                 } else {
                     
                 }
-            }
+            }      
         }
-
-//        $labelsUnq = array();
+            // result save as a istiak.csv file
+            $csvFile = fopen(microtime().'.csv', 'w+');
+            foreach ($products as $line) {
+                fputcsv($csvFile, $line);
+            }
+        
         $labelsUnq[] = array_values($all_data[0]);
-        //echo "<pre>";print_r($labelsUnq);echo "</pre>";die;
 
         $time = (" !!! Took: " . round((microtime(true) - $tic)) . "s");
 
@@ -210,5 +213,5 @@ class ContentController extends Controller {
 
         return $ret;
     }
-
+    
 }
